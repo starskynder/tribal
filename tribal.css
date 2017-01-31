@@ -1,0 +1,259 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+    background-color: black;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    min-height: 100%;
+    background-color: black;
+    font-family: 'Sacramento', cursive;
+    font-size: 35px;
+}
+
+.navbar, .navbar li a, .mini-nav, #title, .div-cards h3 {
+    color: #EF0057;
+}
+
+.navbar li {
+    display: inline-block;
+    list-style-type: none;
+    margin-right: 10px;
+}
+
+.navbar li a, .mini-nav {
+    text-decoration: none;
+}
+
+.navbar li a:hover, .mini-nav:hover {
+    color: #FF9BC0;
+}
+
+.mini-nav, #closing-x {
+    display: none;
+}
+
+.header {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    background-image: url(images/tribal.png);
+    border-radius: 10px;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#title {
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 3px 3px 16px black, -3px -3px 16px black, 3px 3px 16px white, -3px -3px 3px white;
+    text-align: center;
+    align-self: center;
+}
+
+.presentation {
+    margin-top: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.presentation-img {
+    flex: 1;
+    background-image: url(images/power6.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(64, 4, 4, 0.5);
+}
+
+.presentation-text, .div-cards, footer, .footer-div {
+    background-color: #EF0057;
+}
+
+.presentation-text {
+    padding: 15px;
+    flex: 2;
+    font-family: 'Dawning of a New Day', cursive;
+    font-size: 38px;
+    color: white;
+}
+
+.presentation-text h2 {
+    color: black;
+    font-family: 'Dawning of a New Day', cursive;
+    border-bottom: 1px solid black;
+    padding: 5px;
+}
+
+.div-cards {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+div[class^="card"] {
+    color: white;
+    padding: 10px;
+    flex: 1 0 400px;
+    background-color: black;
+    font-family: 'Dawning of a New Day', cursive;
+}
+
+div[class^="card"]:nth-child(-n+2) {
+    margin-right: 15px;
+}
+
+.div-cards h3 {
+    text-align: center;
+}
+
+.div-cards h3:before {
+    content: url(images/tribalmini.png);
+    display: block;
+}
+
+footer {
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+    align-content: center;
+}
+
+.footer-div {
+    color: white;
+    flex: 1;
+    text-align: center;
+    background-image: url(images/corner1.png);
+    background-position: bottom right;
+    background-repeat: no-repeat;
+}
+
+.social-media {
+    display: flex;
+    flex-flow: column;
+    wrap;
+    justify-content: space-around;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.social-media a {
+    color: white;
+    flex: 1;
+    text-decoration: none;
+    text-shadow: 3px 3px 3px #6C0028;
+}
+
+.social-media a:hover {
+    text-shadow: 3px 3px 8px black;
+}
+
+.credits {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    color: white;
+    text-shadow: 3px 3px 3px #6C0028;
+}
+
+.credits p {
+    border-top: 1px solid white;
+    width: 50%;
+}
+
+.credits a {
+    color: #5E0023;
+}
+
+.credits a:hover, .credits a:active {
+    text-decoration: none;
+}
+
+@media (max-width: 800px) {
+    .presentation {
+        display: flex;
+        flex-flow: column nowrap;
+    }
+    .div-cards {
+        background-color: black;
+    }
+    div[class^="card"]:nth-child(-n+2) {
+        margin-right: none;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .div-cards h3:before, .div-cards h3:after {
+        content: none;
+    }
+    .presentation h2 {
+        font-size: 43px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 400px) {
+    .div-cards {
+        flex-flow: column;
+    }
+    div[class^="card"] {
+        flex: 1 0 100%;
+        margin-right: none;
+    }
+    div[class^="card"] h3 {
+        border-bottom: 1px solid #EF0057;
+    }
+}
+
+@media (max-width: 360px) {
+    .navbar {
+        position: absolute;
+        text-align: center;
+        height: 100%;
+        background-color: #EF0057;
+        width: 250px;
+        z-index: 1;
+        top: 0;
+        left: -250px;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+    }
+    .navbar li {
+        color: black;
+        display: block;
+    }
+    .navbar li a, #closing-x {
+        display: block;
+        color: black;
+    }
+    .navbar li a:hover, .navbar li:active {
+        color: white;
+    }
+    .mini-nav, #closing-x {
+        display: block;
+        color: #EF0057;
+        list-style-type: none;
+    }
+    #closing-x {
+        border: 1px solid black;
+        border-radius: 10px;
+    }
+}
